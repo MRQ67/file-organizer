@@ -42,7 +42,7 @@ func main() {
 
 // function to create default folders such as Images, Music, Docs, Others, Videos
 func createDefaultFolders(targetFolder string) {
-	defaultFolders := []string{"Music", "Videos", "Docs", "Images", "Others"}
+	defaultFolders := []string{"Music", "Videos", "Compressed", "Programs", "Documents", "Images", "Others"}
 
 	for _, folder := range defaultFolders {
 		_, err := os.Stat(folder)
@@ -73,7 +73,7 @@ func organizeFolder(targetFolder string) {
 
 			// switch case to move files based on ext
 			switch fileExt {
-			case ".png", ".jpg", ".jpeg":
+			case ".png", ".jpg", ".jpeg", ".ico":
 				newPath := filepath.Join(targetFolder, "Images", fileInfo.Name())
 				err = os.Rename(oldPath, newPath)
 				check(err)
@@ -83,13 +83,18 @@ func organizeFolder(targetFolder string) {
 				err = os.Rename(oldPath, newPath)
 				check(err)
 				noOfFiles++
+			case ".7z", ".zip", ".rar", ".iso":
+				newPath := filepath.Join(targetFolder, "Compressed", fileInfo.Name())
+				err = os.Rename(oldPath, newPath)
+				check(err)
+				noOfFiles++
 			case ".mp4", ".mov", ".avi", ".amv":
 				newPath := filepath.Join(targetFolder, "Videos", fileInfo.Name())
 				err = os.Rename(oldPath, newPath)
 				check(err)
 				noOfFiles++
-			case ".pdf", ".docx", ".csv", ".xlsx":
-				newPath := filepath.Join(targetFolder, "Docs", fileInfo.Name())
+			case ".pdf", ".docx", ".csv", ".xlsx", ".md":
+				newPath := filepath.Join(targetFolder, "Documents", fileInfo.Name())
 				err = os.Rename(oldPath, newPath)
 				check(err)
 				noOfFiles++
