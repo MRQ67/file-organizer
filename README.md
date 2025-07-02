@@ -4,13 +4,14 @@ This is a simple command-line utility written in Go that helps you organize file
 
 ## Features
 
-- **Automatic Categorization**: Organizes files into `Images`, `Videos`, `Docs`, `Music`, and `Others` folders.
+- **Automatic Categorization**: Organizes files into `Images`, `Programs`, `Videos`, `Docs`, `Music`, and `Others` folders.
 - **Easy to Use**: Simply provide the target directory path, and the tool handles the rest.
 - **Error Handling**: Basic error handling for non-existent directories.
 
 ## Supported File Types
 
 - **Images**: `.png`, `.jpg`, `.jpeg`
+- **Programs**: `.exe`, `.msi`
 - **Videos**: `.mp4`, `.mov`, `.avi`, `.amv`
 - **Documents**: `.pdf`, `.docx`, `.csv`, `.xlsx`
 - **Music**: `.mp3`, `.wav`, `.aac`
@@ -72,6 +73,9 @@ MyUnorganizedFiles/
 ├── Images/
 │   ├── my_photo.jpg
 │   └── another_image.jpeg
+├── Program/
+│   ├── program1.exe
+│   └── program2.msi
 ├── Videos/
 │   └── vacation_video.mp4
 ├── Docs/
