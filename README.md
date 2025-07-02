@@ -59,6 +59,7 @@ If you have a folder named `MyUnorganizedFiles` with the following structure:
 ```
 MyUnorganizedFiles/
 ├── my_photo.jpg
+├── program1.exe
 ├── vacation_video.mp4
 ├── report.pdf
 ├── song.mp3
