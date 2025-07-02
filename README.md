@@ -26,7 +26,7 @@ This is a simple command-line utility written in Go that helps you organize file
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/file-organizer.git
+   git clone https://github.com/MRQ67/file-organizer.git
    cd file-organizer
    ```
 

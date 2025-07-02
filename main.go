@@ -78,6 +78,11 @@ func organizeFolder(targetFolder string) {
 				err = os.Rename(oldPath, newPath)
 				check(err)
 				noOfFiles++
+			case ".exe", ".msi":
+				newPath := filepath.Join(targetFolder, "Programs", fileInfo.Name())
+				err = os.Rename(oldPath, newPath)
+				check(err)
+				noOfFiles++
 			case ".mp4", ".mov", ".avi", ".amv":
 				newPath := filepath.Join(targetFolder, "Videos", fileInfo.Name())
 				err = os.Rename(oldPath, newPath)
